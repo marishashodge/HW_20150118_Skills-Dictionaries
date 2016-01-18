@@ -74,6 +74,7 @@ def find_unique_common_items(list1, list2):
     return sorted(unique_items)
 
 
+
 def count_unique(input_string):
     """Count unique words in a string.
 
@@ -225,7 +226,6 @@ def sort_by_word_length(words):
     return list_by_word_length
 
 
-
 def get_sum_zero_pairs(input_list):
     """Given list of numbers, return list of pair summing to 0.
 
@@ -255,7 +255,17 @@ def get_sum_zero_pairs(input_list):
 
     """
 
-    return []
+    input_list_set = set(input_list)
+    final_input_list = list(input_list_set)
+    L = len(final_input_list)
+    sum_zero_pairs = []
+
+    for i in range(L):
+        for x in range(i, L):
+            if final_input_list[i] + final_input_list[x] == 0:
+                sum_zero_pairs.append([final_input_list[i], final_input_list[x]])
+
+    return sum_zero_pairs
 
 
 ##############################################################################
